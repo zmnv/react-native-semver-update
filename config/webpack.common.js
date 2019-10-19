@@ -1,18 +1,17 @@
 const path = require('path');
 const webpack = require('webpack');
-// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-// const nodeExternals = require('webpack-node-externals');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
     node: {
         fs: 'empty',
     },
     target: 'node',
-    // externals: [nodeExternals()],
-    // entry: ['intersection-observer', './src/index.js'],
+    externals: [nodeExternals()],
     entry: './index.js',
     output: {
-        path: path.resolve(__dirname, './dist'),
+        path: path.resolve(__dirname, '../dist'),
         filename: 'index.js',
     },
     module: {
@@ -24,15 +23,16 @@ module.exports = {
             },
         ],
     },
-    plugins: process.env.NODE_ENV === 'production' ? [
+    plugins: [
+        new CleanWebpackPlugin(),
         new webpack.ProgressPlugin(),
-        new webpack.optimize.ModuleConcatenationPlugin(),
-    ] : [],
+    ],
     stats: {
         colors: true,
     },
     devtool: 'source-map',
     resolve: {
+        extensions: ['.js', '.json'],
         alias: {
             '~': path.resolve(__dirname, 'src/'),
         },

@@ -10,7 +10,7 @@ node_modules
 
 # production
 /build
-/dist
+/dist/*.js.map
 
 # misc
 .DS_Store

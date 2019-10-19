@@ -1,18 +1,18 @@
 {
     "name": "react-native-semver-update",
-    "version": "1.0.5",
+    "version": "1.0.12",
     "description": "Automaticly updates a project version and build number for react-native",
     "preferGlobal": true,
     "bin": {
         "rnsemup": "./bin.js"
     },
     "scripts": {
-        "build": "./node_modules/.bin/webpack --config ./webpack.config.js --mode production",
+        "build": "webpack --config ./config/webpack.prod.js",
+        "dev": "webpack --watch --config ./config/webpack.dev.js",
         "dev:live": "nodemon ./dist/index.js",
-        "dev:static": "webpack --watch --config ./webpack.config.js --mode development",
         "lint": "eslint ./src",
         "start": "node ./dist/index.js",
-        "postinstall": "npm run build && node ./postinstall.js"
+        "postinstall": "node ./postinstall.js"
     },
     "repository": {
         "type": "git",
@@ -35,25 +35,25 @@
     "homepage": "https://github.com/zmnv/react-native-semver-update#readme",
     "dependencies": {
         "chalk": "^2.4.2",
-        "inquirer": "^7.0.0"
+        "inquirer": "^7.0.0",
+        "@babel/runtime": "^7.6.3"
     },
     "devDependencies": {
         "@babel/core": "^7.4.3",
         "@babel/plugin-proposal-class-properties": "^7.4.4",
         "@babel/plugin-transform-runtime": "^7.4.3",
         "@babel/preset-env": "^7.4.3",
-        "@babel/runtime": "^7.5.5",
         "babel-eslint": "^10.0.2",
         "babel-loader": "^8.0.5",
-        "clean-webpack-plugin": "^2.0.1",
+        "clean-webpack-plugin": "^3.0.0",
         "eslint": "^6.5.1",
         "eslint-config-airbnb-base": "^14.0.0",
         "eslint-import-resolver-alias": "^1.1.2",
         "eslint-plugin-import": "^2.18.2",
         "nodemon": "^1.18.11",
         "raw-loader": "^2.0.0",
-        "webpack": "^4.29.6",
-        "webpack-cli": "^3.3.0",
+        "webpack": "^4.41.2",
+        "webpack-cli": "^3.3.9",
         "webpack-merge": "^4.2.1",
         "webpack-node-externals": "^1.7.2"
     },

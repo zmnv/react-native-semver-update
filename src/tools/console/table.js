@@ -8,7 +8,7 @@ const renderTable = ({ m1 = '', m2 = '', m3 = '', m4 = '', m5 = '' } = {}) => {
     const h2 = LayoutLine('Android', width, undefined, chalk.greenBright);
     const h3 = LayoutLine('iOS', width, undefined, chalk.cyanBright);
 
-    const r1 = LayoutLine('Package Version', 16, undefined, chalk.whiteBright);
+    const r1 = LayoutLine('Project Version', 16, undefined, chalk.whiteBright);
     const r2 = LayoutLine('Build Number', 16, undefined, chalk.whiteBright);
 
     const v11 = LayoutLine(m1, width, undefined, chalk.yellowBright);

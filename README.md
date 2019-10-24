@@ -36,7 +36,7 @@ rnsemup
 ```js
 PACKAGE: resolve(CURRENT_DIRECTORY_PATH, './package.json'),
 ANDROID: resolve(CURRENT_DIRECTORY_PATH, './android/app/build.gradle'),
-IOS: resolve(CURRENT_DIRECTORY_PATH, './ios/enapter.xcodeproj/project.pbxproj'),
+IOS: resolve(CURRENT_DIRECTORY_PATH, './ios/<YOUR PROJECT NAME FROM app.json>.xcodeproj/project.pbxproj'),
 ```
 
 2. Find & replace versions by regular expressions [(see searchPatterns.js)](https://github.com/zmnv/react-native-semver-update/blob/master/src/tools/searchPatterns.js)

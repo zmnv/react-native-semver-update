@@ -1,9 +1,8 @@
-import { readFileSync } from 'fs';
 import { CONSTANTS } from '../constants';
 import { SEARCH_PATTERNS } from '../searchPatterns';
 import { PATHS } from '../paths';
 
-const readFile = inputPath => readFileSync(inputPath, 'utf8');
+import { readFile } from './readFile';
 
 function getNativeVersion(inputPattern, sourceFile) {
     const projectVersion = new RegExp(inputPattern.buildVersion).exec(sourceFile)[2];

@@ -1,6 +1,6 @@
 {
     "name": "react-native-semver-update",
-    "version": "1.0.12",
+    "version": "1.0.13",
     "description": "Automaticly updates a project version and build number for react-native",
     "preferGlobal": true,
     "bin": {

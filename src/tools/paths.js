@@ -1,5 +1,6 @@
 import { resolve } from 'path';
 import { existsSync } from 'fs';
+import chalk from 'chalk';
 
 import { readFile } from './files/readFile';
 
@@ -8,8 +9,8 @@ const CURRENT_DIRECTORY_PATH = process.cwd();
 function getAppProjectName() {
     const appJsonFilePath = resolve(CURRENT_DIRECTORY_PATH, './app.json');
 
-    if (!existsSync(appJsonFilePath)) {
-        console.log('app.json file not found in', CURRENT_DIRECTORY_PATH);
+    if (!existsSync(appJsonFilePath)) { 
+        console.log(chalk.redBright('[rnsemup] File app.json not found in'), CURRENT_DIRECTORY_PATH);
         process.exit(1);
     }
 

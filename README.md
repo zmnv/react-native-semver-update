@@ -55,7 +55,7 @@ iOS
 
 ## Support
 
-* react-native 0.60.4
+* react-native 0.60+
 
 ## Why?
 

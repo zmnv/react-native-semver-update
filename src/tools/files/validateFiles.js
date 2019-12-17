@@ -4,8 +4,13 @@ import { existsSync } from 'fs';
 import { PATHS } from '../paths';
 import { colorByBoolean } from '../console/colorByBoolean';
 
-function tryFilesExist() {
-    let isExit = false;
+/**
+ * Returns `true` if any required file in `PATHS` not exist
+ * and show warning in console.
+ * @returns boolean
+ */
+function validateImportantFilesExist() {
+    let isError = false;
     const meta = {};
 
     Object.keys(PATHS).forEach(key => {
@@ -16,11 +21,11 @@ function tryFilesExist() {
         };
 
         if (!isFileExist) {
-            isExit = true;
+            isError = true;
         }
     });
 
-    if (isExit) {
+    if (isError) {
         console.log(
             chalk.redBright('[Error] Some of files not found:\n'),
         );
@@ -33,9 +38,9 @@ function tryFilesExist() {
         });
     }
 
-    return isExit;
+    return isError;
 }
 
 export {
-    tryFilesExist,
+    validateImportantFilesExist,
 };

@@ -5,7 +5,7 @@ import { showBuildNumberIncreased } from '../tools/console/renderMessages';
 import { getCurrentBuilds } from '../tools/currents';
 
 /**
- * [Application] Increace build number
+ * [Application] Increase build number
  * 
  * 1 → 2
  */

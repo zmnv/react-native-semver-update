@@ -7,7 +7,7 @@ import App from './src/App';
 program
     .option('-v, --version', 'Output version number')
     .option('-u, --update [patch|minor|major]', 'Update part of project version')
-    .option('-b, --build', 'Increace/decreace build number');
+    .option('-b, --build', 'Increase build number');
 
 program.parse(process.argv);
 

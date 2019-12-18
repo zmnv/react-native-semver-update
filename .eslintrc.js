@@ -53,9 +53,7 @@ module.exports = {
             },
             alias: {
                 extensions: ext,
-                map: [
-                    ["~", './src'],
-                ]
+                map: []
             },
         }
     },

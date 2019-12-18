@@ -1,9 +1,5 @@
 # React Native Semver Update
 
-> **Warning**  
-> This is a first version. It hasn't any input validations by now.
-> Use it for your own risk.
-
 Automaticly updates a project version and build number in:
 * package.json
 * iOS

@@ -16,7 +16,6 @@ export function increaseProjectVersion(program) {
     const fileInfoNew = getFilesInfo();
     const versions = getCurrentVersions(fileInfoNew);
     const semverUnit = program.update;
-    console.log('semverUnit', semverUnit);
 
     const newVersions = {
         package: increaseVersion(versions.package, program.update),

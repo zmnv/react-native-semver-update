@@ -1,3 +1,16 @@
+import program from 'commander';
+
+import { validateImportantFilesExist } from './src/tools/files/validateFiles';
+
 import App from './src/App';
 
-App();
+program
+    .option('-v, --version', 'Output version number')
+    .option('-u, --update [patch|minor|major]', 'Update part of project version')
+    .option('-b, --build', 'Increace/decreace build number');
+
+program.parse(process.argv);
+
+validateImportantFilesExist();
+
+App(program);

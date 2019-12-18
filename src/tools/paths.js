@@ -14,7 +14,7 @@ function getAppProjectName() {
 
     if (!existsSync(appJsonFilePath)) { 
         console.log(chalk.redBright('[rnsemup] File app.json not found in'), CURRENT_DIRECTORY_PATH);
-        process.exit(1);
+        process.exit(0);
     }
 
     const appJsonFile = readFile(appJsonFilePath);
@@ -24,7 +24,7 @@ function getAppProjectName() {
 
     if (!appName) {
         console.log('App name not found in app.json from ', CURRENT_DIRECTORY_PATH);
-        process.exit(1);
+        process.exit(0);
     }
 
     return appJsonObject.name;

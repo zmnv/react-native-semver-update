@@ -4,10 +4,9 @@ import { existsSync } from 'fs';
 import { PATHS } from '../paths';
 import { colorByBoolean } from '../console/colorByBoolean';
 
-/**
- * Returns `true` if any required file in `PATHS` not exist
- * and show warning in console.
- * @returns boolean
+/** 
+ * ## If required files doesn't exist
+ * ## current process will be killed
  */
 function validateImportantFilesExist() {
     let isError = false;
@@ -36,9 +35,11 @@ function validateImportantFilesExist() {
             console.log('– is found:', colorByBoolean(meta[key].isFound));
             console.log('');
         });
+
+        process.exit(0);
     }
 
-    return isError;
+    // return isError;
 }
 
 export {

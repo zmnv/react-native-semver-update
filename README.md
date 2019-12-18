@@ -55,6 +55,7 @@ rnsemup -b -u minor
 
 1. Increase build number
 2. Increase minor in project version
+3. Set patch is 0
 
 ## How it works
 

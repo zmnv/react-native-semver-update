@@ -18,21 +18,24 @@ async function askAboutType() {
 }
 
 async function askAboutPlatform(updateFor) {
-    const choices = [
+    let choices = [
         CONSTANTS.PLATFORM.ALL,
         CONSTANTS.PLATFORM.PACKAGE,
         CONSTANTS.PLATFORM.ANDROID,
         CONSTANTS.PLATFORM.IOS,
     ];
 
-    if (updateFor === CONSTANTS.UPDATE.BUILD_NUMBER_VARIANT) delete choices[1];
+    if (updateFor === CONSTANTS.UPDATE.BUILD_NUMBER_VARIANT) {
+        delete choices[1];
+        choices = choices.filter(Boolean);
+    }
 
     const answers = await prompt([
         {
             type: 'list',
             name: 'platform',
             message: 'Choose the platform:',
-            choices,
+            choices: choices.filter(Boolean),
         },
     ]);
 

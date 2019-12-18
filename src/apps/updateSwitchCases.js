@@ -1,7 +1,7 @@
 /* eslint-disable default-case */
-import { askVersionText, askAboutType, askAboutPlatform } from './tools/menu';
-import { updatePackageVersion, updateAndroidVersion, updateIosVersion } from './tools/files/updateFilesInfo';
-import { CONSTANTS } from './tools/constants';
+import { askVersionText, askAboutType, askAboutPlatform } from '../tools/menu';
+import { updatePackageVersion, updateAndroidVersion, updateIosVersion } from '../tools/files/updateFilesInfo';
+import { CONSTANTS } from '../tools/constants';
 
 async function updateProjectVersions(fileInfo, platform) {
     const { version } = await askVersionText('Input the new Project Version:');
@@ -47,6 +47,10 @@ async function updateBuildNumbers(fileInfo, platform) {
     }
 }
 
+/**
+ * [Application] Update versions or build number by menu interface
+ * 
+ */
 async function updateSwitchCases(fileInfo) {
     const { updateFor } = await askAboutType();
     const { platform } = await askAboutPlatform(updateFor);

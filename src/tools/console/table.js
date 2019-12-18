@@ -18,7 +18,7 @@ const renderTable = ({ m1 = '', m2 = '', m3 = '', m4 = '', m5 = '' } = {}) => {
     const v22 = LayoutLine(m4, width, undefined, chalk.greenBright);
     const v23 = LayoutLine(m5, width, undefined, chalk.cyanBright);
 
-    return chalk.gray(`
+    return chalk.gray(`\
 ┌──────────────────┬─────────────┬─────────────┬─────────────┐
 │                  │ ${h1} │ ${h2} │ ${h3} │
 ├──────────────────┼─────────────┼─────────────┼─────────────┤

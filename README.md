@@ -1,9 +1,5 @@
 # React Native Semver Update
 
-> **Warning**  
-> This is a first version. It hasn't any input validations by now.
-> Use it for your own risk.
-
 Automaticly updates a project version and build number in:
 * package.json
 * iOS
@@ -22,11 +18,40 @@ npm i -g react-native-semver-update
 ```
 
 ## Usage
+
+### Change Version by Manual Control
+
 1. Write commmand in terminal and press [enter]:
 ```
 rnsemup
 ```
 2. Choose what do you need from menu.
+
+### Auto Increase by cli
+
+Build Number:
+```
+rnsemup -b
+```
+
+Project Version:
+```
+rnsemup -u <unit>
+```
+where `unit` is:
+ * `major` 1.2.3 → 2.0.0  
+ * `minor` 1.2.3 → 1.3.0  
+ * `patch` 1.2.3 → 1.2.4  
+
+For example:
+
+```
+rnsemup -b -u minor
+```
+
+1. Increase build number
+2. Increase minor in project version
+3. Set patch is 0
 
 ## How it works
 

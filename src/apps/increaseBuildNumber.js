@@ -9,7 +9,9 @@ import { getCurrentBuilds } from '../tools/currents';
  * 
  * 1 → 2
  */
-export function increaseBuildNumber() {
+export function increaseBuildNumber(program) {
+    const platform = program.platform
+    
     const fileInfoNew = getFilesInfo();
     const builds = getCurrentBuilds(fileInfoNew);
     const newBuilds = {
@@ -18,7 +20,15 @@ export function increaseBuildNumber() {
     };
 
     showBuildNumberIncreased();
-
-    updateAndroidVersion(fileInfoNew, null, `${newBuilds.android}`);
-    updateIosVersion(fileInfoNew, null, `${newBuilds.ios}`);
+    
+    if (platform !== undefind){
+        if (platform === 'ios') {
+            updateIosVersion(fileInfoNew, null, `${newBuilds.ios}`);
+        } else if (platform === 'android') {
+            updateAndroidVersion(fileInfoNew, null, `${newBuilds.android}`);
+        }
+    } else {
+        updateAndroidVersion(fileInfoNew, null, `${newBuilds.android}`);
+        updateIosVersion(fileInfoNew, null, `${newBuilds.ios}`);
+    }
 }

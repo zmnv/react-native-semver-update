@@ -23,7 +23,7 @@ async function App(program) {
 
     if (program.build) {
         showResultsTable = true;
-        increaseBuildNumber();
+        increaseBuildNumber(program);
     }
 
     if (program.update && validateUpdateType(program.update)) {
